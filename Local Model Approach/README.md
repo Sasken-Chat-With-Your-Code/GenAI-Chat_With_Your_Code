@@ -6,12 +6,5 @@ This version of Chat With Code runs entirely on your local machine using Qwen 1.
 
 
 
-### Credits
-
-This project was developed collaboratively:
-
-- **Shreya C Bharadwaj** – Local Model RAG pipeline, Qwen model integration, FAISS setup, FastAPI backend  
-- **[Manasa Likhith]** – API approach (elaborate)  
-- **[Laasya Siva Vaishali]** – Frontend using react and tailwind (elaborate)
-
+#### Author - Shreya C Bharadwaj
 
