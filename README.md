@@ -102,8 +102,8 @@ npm run dev
 
 This project was developed collaboratively:
 
-- Shreya C. Bharadwaj – Local Model RAG pipeline, Qwen model integration, FAISS setup, FastAPI backend
-- Manasa K. and Likhith Gowda A S – API approach using Gemini, Tree-Sitter RAG pipeline for extraction of code chunks
-- Laasya Priya and Siva Vaishali – Interactive frontend using React, Tailwind, and TypeScript
+- **Shreya C Bharadwaj** – Local Model RAG pipeline, Qwen model integration, FAISS setup, FastAPI backend
+- **Manasa K. and Likhith Gowda A S** – API approach using Gemini, Tree-Sitter RAG pipeline for extraction of code chunks
+- **Laasya Priya and Siva Vaishali** – Interactive frontend using React, Tailwind, and TypeScript
 
 
