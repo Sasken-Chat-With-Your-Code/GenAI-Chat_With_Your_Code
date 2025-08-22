@@ -51,7 +51,7 @@ This project was developed collaboratively:
 - Connected **Gemini 1.5 Flash** for LLM-powered explanations.  
 - Built **FastAPI backend** with secure `/ask` endpoint.  
 - Generated **Mermaid flowcharts** for function logic visualization.  
-- ## Laasya and Siva Vaishali – Frontend using react and tailwind (elaborate)
+- ## Laasya and Siva Vaishali – Frontend using react and tailwind 
 - Built with React 18 + TypeScript, Tailwind CSS, Vite, and Lucide React, featuring responsive design, reusable components, and theme support (dark/light).
 - Secure signup/login with bcrypt password hashing, Flask-Session for session management, and persistent user preferences.
 - Drag-and-drop C/C++ file uploads with validation, syntax-highlighted viewer, file statistics, Mermaid diagram visualizations, and localStorage persistence.
