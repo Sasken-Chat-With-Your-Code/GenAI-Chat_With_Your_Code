@@ -84,7 +84,7 @@ Follow the steps below to run the project locally.
 
 ### Clone Repository
 ```bash
-git clone [https://github.com/Sasken-Chat-With-Your-Code/GenAI-Chat_With_Your_Code/tree/main/Api_Approach](https://github.com/Sasken-Chat-With-Your-Code/GenAI-Chat_With_Your_Code/tree/main/Api_Approach)
+git clone https://github.com/Sasken-Chat-With-Your-Code/GenAI-Chat_With_Your_Code/tree/main/Api_Approach
 cd Api_Approach
 ```
 
