@@ -1,0 +1,14 @@
+[
+  {
+    "content": "int knapsack(int W,int wt[],int val[],int n){\n    int i,w;\n    int K[i+1][w+1];\n\n    for(i=0;i<=n;i++){\n        for(w=0;w<=W;w++){\n            if(i==0||w==0){\n                K[i][w]=0;\n            }\n            else if(wt[i-1]<=w){\n                K[i][w]= max(val[i-1]+K[i-1][w-wt[i-1]],K[i-1][w]);\n            }\n            else{\n                K[i][w] = K[i-1][w];\n            }\n        }\n    }\n    return K[n][W];\n}",
+    "source": "data/codebase\\knapsack_dp.c.c",
+    "start_line": 2,
+    "signature": "int max(int a,int b){ return (a>b? a:b); } "
+  },
+  {
+    "content": "    for(int i=0;i<n;i++){\n        printf(\"Enter the value and weight of item %d :\\n\",i+1);\n        scanf(\"%d %d\",&val[i],&wt[i]);\n    }",
+    "source": "data/codebase\\knapsack_dp.c.c",
+    "start_line": 26,
+    "signature": "int main(){ int val[100],wt[100]; int n,W; printf(\"Enter the number of items :\\n\"); scanf(\"%d\",&n);"
+  }
+]
