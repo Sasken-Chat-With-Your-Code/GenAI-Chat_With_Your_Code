@@ -1,13 +1,59 @@
 # GenAI-Chat_With_Your_Code
 
+Chat With Your Code is a Retrieval-Augmented Generation (RAG) system that lets developers **converse with their C/C++ codebase in natural language**. It provides explanations, Q&A, and even **Mermaid-based flow diagrams** to visualize code logic.  
+
+This project has **two parallel approaches**:  
+1. **Local Model Approach**   
+2. **API Approach**  
+
+---
+
 ### Local Model Approach
 This version of Chat With Code runs entirely on your local machine using Qwen 1.5-0.5B-Chat model for understanding and answering questions about a C/C++ codebase. It leverages FastAPI for serving the backend, FAISS for efficient vector-based retrieval of code chunks, and implements a RAG (Retrieval-Augmented Generation) pipeline to provide context-aware, accurate responses.
+
+### Features 
+
+- **Privacy-Preserving** – Runs entirely on a local machine or private server, with no dependency on external APIs.  
+- **API-First Design** – Qwen is encapsulated within a FastAPI service, allowing seamless interaction through REST endpoints without requiring users to install or manage the model directly.  
+- **Plug-and-Play Deployment** – Functions like a hosted API (similar to Gemini), but fully self-contained and self-hosted.  
+- **High-Performance Retrieval** – FAISS ensures efficient semantic search across large and complex C/C++ codebases.  
+- **Semantic Embeddings** – SentenceTransformers (`all-MiniLM-L6-v2`) provide robust vector representations of code and documentation.  
+- **Context-Enriched Responses** – Retrieval-Augmented Generation (RAG) pipeline combines embeddings with Qwen’s reasoning for accurate and grounded answers.  
+- **Extensible Architecture** – Built with FastAPI, enabling easy integration of authentication, logging, monitoring, and enterprise-grade extensions.  
+
+
+### 🛠️ Tech Stack  
+- **Programming Language** – Python (backend), C/C++ (knowledge base)  
+- **Backend Framework** – [FastAPI](https://fastapi.tiangolo.com/) for serving queries  
+- **Vector Database** – [FAISS](https://github.com/facebookresearch/faiss) for efficient similarity search  
+- **Embedding Model** – [SentenceTransformers](https://www.sbert.net/) (`all-MiniLM-L6-v2`) for code embeddings  
+- **Local LLM** – [Qwen 1.5-0.5B-Chat](https://huggingface.co/Qwen) for explanation & reasoning  
+- **Environment** – `venv` or `conda` for dependency management  
+- **Version Control** – Git & GitHub for collaboration
+
+
+### ▶️ Running the Project
+
+#### Run Backend (FastAPI)
+
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+#### Run Frontend (React.js)
+cd frontend 
+
+npm install
+
+npm run dev
+
+
+---
+
 
 
 ### API Approach
 ChatWithCode is a Retrieval-Augmented Generation (RAG) using Gemini API , system that lets developers chat with a C/C++ codebase in natural language. It helps in understanding unfamiliar codebases by answering queries, generating explanations, and visualizing logic flow through Mermaid diagrams.
 
-## 🚀 Features
+### 🚀 Features
 
 - **C/C++ Code Understanding** – Ask natural language questions about functions, modules, and logic in C/C++ codebases.  
 - **Function & Comment Chunking** – Extracts semantically meaningful chunks (functions, docstrings, comments) from source code.  
@@ -17,7 +63,7 @@ ChatWithCode is a Retrieval-Augmented Generation (RAG) using Gemini API , system
 - **React.js Frontend** – Interactive web interface with Mermaid.js rendering for diagrams and chat history.  
 - **FastAPI Backend** – Provides a secure `/ask` endpoint to handle queries via the RAG pipeline.  
 
-## ⚙️ Tech Stack
+### ⚙️ Tech Stack
 
 - **Programming Language** – Python (backend + preprocessing), C/C++ (knowledge base).  
 - **Backend Framework** – [FastAPI](https://fastapi.tiangolo.com/) for API and RAG orchestration.  
@@ -29,58 +75,36 @@ ChatWithCode is a Retrieval-Augmented Generation (RAG) using Gemini API , system
 - **Environment Management** – `venv` or `conda` for Python dependencies.  
 - **Version Control** – Git & GitHub for collaboration. 
 
-## Run Backend (FastAPI)
+
+### ▶️ Running the Project
+#### Run Backend (FastAPI)
 uvicorn main:app --reload
 
-## Run Frontend (React.js)
+
+#### Run Frontend (React.js)
 cd frontend
 
 npm install
 
 npm run dev
 
-
-### Credits
-
-This project was developed collaboratively:
-
-- ## Shreya C Bharadwaj – Local Model RAG pipeline, Qwen model integration, FAISS setup, FastAPI backend  
-- ## Manasa K and  Likhith – API approach 
-**Backend Development (RAG, LLM, FastAPI)** 
-- ** 🔧 Backend Overview
-
-The backend powers the **Chat With Your Code** system, enabling semantic search and AI-powered explanations over large C/C++ codebases. It combines modern vector search, embeddings, and LLM integration for contextual responses.
-
 ---
-
-** ⚙️ Tech Stack
-- **Python** – Core language for backend logic  
-- **FastAPI** – Lightweight and high-performance API framework  
-- **ChromaDB** – Vector database for storing code embeddings and metadata  
-- **SentenceTransformers** – Generates dense vector embeddings using `all-MiniLM-L6-v2`  
-- **Tree-sitter** – Accurate parsing of C/C++ functions, classes, and comments  
-
----
-
-** 🔍 Semantic Search
-- **Advanced Vector Embeddings** – Converts both code snippets and natural language queries into embeddings  
-- **Context-Aware Retrieval** – Finds semantically related code instead of relying on keyword matches  
-- **Complete Code Units** – Ensures retrieved chunks are entire functions or logical blocks (via Tree-sitter)  
-
----
-
-** 🤖 LLM-Powered Responses
-- **AI-Generated Explanations** – Uses structured code chunks for clear, contextual explanations  
-- **Technical Q&A** – Answers complex developer queries about the codebase  
-- **Code Documentation** – Generates accurate function/class-level documentation  
-- **Mermaid Flowcharts** – Visualizes function logic with auto-generated diagrams  
   
-- ## Laasya and Siva Vaishali – Frontend using react and tailwind 
+- ### Frontend using react and tailwind 
 - Built with React 18 + TypeScript, Tailwind CSS, Vite, and Lucide React, featuring responsive design, reusable components, and theme support (dark/light).
 - Secure signup/login with bcrypt password hashing, Flask-Session for session management, and persistent user preferences.
 - Drag-and-drop C/C++ file uploads with validation, syntax-highlighted viewer, file statistics, Mermaid diagram visualizations, and localStorage persistence.
 - Animated landing page, gradient and glassmorphism effects, micro-interactions, and chat interface for seamless user engagement.
 - AI-driven natural language responses for code explanation, documentation generation, and RAG-based query handling.
+
+---
+### 👩‍💻 Contributors
+
+This project was developed collaboratively:
+
+- **Shreya C Bharadwaj** – Local Model RAG pipeline, Qwen model integration, FAISS setup, FastAPI backend  
+-  **Manasa K and  Likhith** – API approach
+- **Laasya and Siva Vaishali** – Frontend using react and tailwind 
 
 
 
