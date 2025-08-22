@@ -1,298 +1,214 @@
-### API Approach
+# Chat with Your Code
 
-Table of Contents
-1. About the Project
-2. Features
-3. Technologies Used
-4. Getting Started
-5. Prerequisites
-6. Installation
-7. Environment Variables
-8.Running the Backend
-9. Running the Frontend
-10. Usage
-11. Project Structure
-12. API Endpoints
-13. Contributing
-14.License
-15.Acknowledgments
+An AI-powered assistant that helps developers understand and navigate C, C++, and header file codebases using **Retrieval Augmented Generation (RAG)**. Upload your source code files and ask natural language questions to get contextual explanations of functions, classes, structs, and overall logic.
 
-1. About the Project
-"Chat with Your Code" is an innovative AI-powered assistant designed to help developers quickly understand and navigate C, C++, and header file codebases. This project implements a Retrieval Augmented Generation (RAG) architecture, allowing you to upload your source code files and then ask natural language questions about specific functions, classes, structs, or general code logic.
+---
 
-The system intelligently breaks down your code into semantic chunks, stores them in a vector database (ChromaDB), and retrieves the most relevant snippets based on your query. These retrieved chunks are then used to contextualize a Large Language Model (Google Gemini 1.5 Flash), enabling it to provide accurate, concise, and developer-friendly answers about your codebase.
+## Table of Contents
+1. [About the Project](#about-the-project)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Getting Started](#getting-started)
+5. [Prerequisites](#prerequisites)
+6. [Installation](#installation)
+7. [Environment Variables](#environment-variables)
+8. [Running the Backend](#running-the-backend)
+9. [Running the Frontend](#running-the-frontend)
+10. [Usage](#usage)
+11. [Project Structure](#project-structure)
+12. [API Endpoints](#api-endpoints)
+13. [Contributing](#contributing)
+14. [License](#license)
+15. [Acknowledgments](#acknowledgments)
 
-2. Features
-Intelligent Code Chunking: Utilizes Tree-sitter for robust and accurate parsing of C, C++, and header files, identifying functions, classes, structs, and comments.
+---
 
-Semantic Search (RAG): Embeds code chunks into a vector space and retrieves contextually relevant snippets using cosine similarity.
+## 1. About the Project
+**Chat with Your Code** is designed to assist developers in exploring and understanding large C/C++ projects.
 
-Natural Language Interaction: Ask questions about your code in plain English.
+The system leverages:
+- **Tree-sitter** for parsing code into semantic chunks.
+- **ChromaDB** for vector storage of embeddings.
+- **Google Gemini 1.5 Flash** for contextual, natural-language answers.
 
-LLM-Powered Explanations: Leverages Google Gemini 1.5 Flash to generate clear, concise, and informative answers based on the retrieved code context.
+With RAG, code is broken into meaningful chunks, stored in a vector database, and queried intelligently to provide developer-friendly explanations.
 
-Persistent Vector Database: Uses ChromaDB to store code embeddings and metadata, allowing you to query your uploaded codebase across sessions.
+---
 
-Codebase Management: Features to upload new code files and clear the entire indexed codebase.
+## 2. Features
+- **Intelligent Code Chunking** – Accurate parsing of functions, classes, structs, and comments.
+- **Semantic Search (RAG)** – Retrieves the most relevant code snippets.
+- **Natural Language Interaction** – Ask questions in plain English.
+- **LLM-Powered Explanations** – Uses Gemini 1.5 Flash for concise answers.
+- **Persistent Vector Database** – Stores embeddings across sessions.
+- **Codebase Management** – Upload new files or clear existing ones.
+- **Configurable Parameters** – Control retrieval depth, similarity thresholds, and generation randomness.
+- **CORS Support** – Easy frontend integration.
 
-Configurable Parameters: Adjust retrieval (top_k, similarity_threshold) and generation (temperature) parameters for tailored responses.
+---
 
-Cross-Origin Resource Sharing (CORS): Configured for easy integration with frontend applications.
+## 3. Technologies Used
 
-3. Technologies Used
-Backend (Python FastAPI):
+### Backend (Python FastAPI)
+- FastAPI, Uvicorn
+- ChromaDB
+- Sentence-Transformers (all-MiniLM-L6-v2)
+- Tree-sitter & tree-sitter-languages
+- Google Generative AI SDK
+- Pydantic
+- Python-dotenv
 
-FastAPI: High-performance web framework for building APIs.
+### Frontend (React + TypeScript)
+- React 18, Vite, Tailwind CSS, Lucide React
+- Secure login with bcrypt + Flask-Session
+- Drag-and-drop file uploads, syntax-highlighted viewer, Mermaid diagrams
+- Animated landing page, chat UI, light/dark themes
 
-Uvicorn: ASGI server for running FastAPI.
+---
 
-ChromaDB: Lightweight, embedded vector database.
+## 4. Getting Started
+Follow the steps below to run the project locally.
 
-Sentence-Transformers: For generating embeddings from text (all-MiniLM-L6-v2 model).
+---
 
-Tree-sitter & tree-sitter-languages: For advanced, language-aware code parsing and chunking.
+## 5. Prerequisites
+- **Python 3.9+**
+- **pip** (comes with Python)
+- **Node.js (LTS)**
+- **npm**
+- **Google Gemini API Key**
 
-Google Generative AI SDK: For interacting with the Gemini LLM.
+---
 
-Pydantic: For data validation and settings management.
+## 6. Installation
 
-Python-dotenv: For loading environment variables.
-
-Frontend (Node.js & TypeScript):
-
-Node.js: JavaScript runtime.
-
-TypeScript: Superset of JavaScript that compiles to plain JavaScript.
-
-(Further frontend libraries would depend on your specific setup, e.g., React, Next.js, Vue, etc.)
-
-4. Getting Started
-Follow these steps to set up and run the "Chat with Your Code" project on your local machine.
-
-5.Prerequisites
-Before you begin, ensure you have the following installed:
-
-Python 3.9+:
-
-Bash
-python --version
-pip (Python package installer): Usually comes with Python.
-
-Bash
-pip --version
-Node.js (LTS recommended):
-
-Bash
-node --version
-npm (Node Package Manager): Usually comes with Node.js.
-
-Bash
-npm --version
-Google Gemini API Key: You'll need an API key from Google AI Studio.
-
-6. Installation
-Clone the repository:
-
-Bash
-git clone https://github.com/Sasken-Chat-With-Your-Code/GenAI-Chat_With_Your_Code/tree/main/Api_Approach
+### Clone Repository
+```bash
+git clone [https://github.com/Sasken-Chat-With-Your-Code/GenAI-Chat_With_Your_Code/tree/main/Api_Approach](https://github.com/Sasken-Chat-With-Your-Code/GenAI-Chat_With_Your_Code/tree/main/Api_Approach)
 cd Api_Approach
-Backend Setup:
+```
 
-Navigate into the backend directory:
-
-Bash
+### Backend Setup
+```bash
 cd backend
-Create a Python virtual environment (recommended):
-
-Bash
 python -m venv venv
-Activate the virtual environment:
-
-On macOS/Linux:
-
-Bash
-source venv/bin/activate
-
-On Windows:
-
-Bash
-.\venv\Scripts\activate
-Install backend dependencies:
-
-Bash
-
+source venv/bin/activate   # (Linux/macOS)
+.\venv\Scripts\activate    # (Windows)
 pip install -r requirements.txt
-# If you don't have requirements.txt, you can install manually:
-# pip install fastapi uvicorn chromadb sentence-transformers python-dotenv google-generativeai tree-sitter tree-sitter-languages
-Go back to the project root:
-
-Bash
 cd ..
-Frontend Setup:
+```
 
-Navigate into your frontend directory (assuming it's named frontend):
-
-Bash
+### Frontend Setup
+```bash
 cd frontend
-Install frontend dependencies:
-
-Bash
 npm install
-Go back to the project root:
-
-Bash
 cd ..
+```
 
-7. Environment Variables
-Create a .env file in the backend directory (Is already created) (i.e., ChatWithYourCode/backend/.env) and add your Google Gemini API key:
+---
 
+## 7. Environment Variables
+Create a `.env` file in `backend/`:
+
+```
 GEMINI_API_KEY="YOUR_GEMINI_API_KEY_HERE"
-Important: Replace "YOUR_GEMINI_API_KEY_HERE" with your actual API key.
+```
 
-8. Running the Backend
-Make sure your Python virtual environment is activated.
+---
 
-From the project root directory (YOUR_REPO_NAME), run the backend:
-
-Bash
+## 8. Running the Backend
+```bash
 python -m backend.main
-The backend API will start running on http://0.0.0.0:8000. You should see output similar to:
+```
+Runs at: `http://0.0.0.0:8000`
 
-INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+---
 
-9. Running the Frontend
-From your frontend directory (e.g., YOUR_REPO_NAME/frontend), run the frontend development server:
-
-Bash
+## 9. Running the Frontend
+```bash
 npm run dev
-This will typically start your frontend application on http://localhost:3000 or a similar port, as configured in your frontend project.
+```
+Runs at: `http://localhost:3000`
 
-10. Usage
-Once both the backend and frontend are running:
+---
 
-Open your frontend application in your web browser (e.g., http://localhost:3000).
+## 10. Usage
+1. Open the frontend app in your browser.
+2. Upload `.c`, `.cpp`, `.h`, `.hpp`, or `.cxx` files.
+3. Ask questions in plain English.
+4. View answers with highlighted relevant snippets.
+5. Clear the codebase to restart with new files.
 
-Upload Code Files: Use the provided interface in your frontend to upload C, C++, or header files (.c, .cpp, .h, .hpp, .cxx). The backend will process and index these files into ChromaDB.
+---
 
-Ask Questions: Type your natural language questions about the uploaded codebase into the query input field.
-
-Explore Answers: The system will retrieve relevant code snippets and generate an answer. You can examine the generated answer and the retrieved code context.
-
-Clear Codebase: If you wish to index a completely new set of files, use the "Clear Codebase" functionality (if exposed in your frontend) to remove all existing data from ChromaDB.
-
-11. Project Structure
+## 11. Project Structure
+```
 .
 ├── backend/
-│   ├── main.py                     # FastAPI application entry point
-│   ├── llm_module.py               # Handles interactions with the Google Gemini LLM
-│   ├── rag_module.py               # Core RAG logic: chunking, embedding, retrieval
-│   ├── .env.example                # Example for environment variables
-│   ├── .env                        # Your actual environment variables (Gitignored)
-│   └── requirements.txt            # Python dependencies
-├── frontend/                       # Your Node.js/TypeScript frontend application
+│   ├── main.py
+│   ├── llm_module.py
+│   ├── rag_module.py
+│   ├── .env.example
+│   ├── .env
+│   └── requirements.txt
+├── frontend/
 │   ├── src/
-│   │   └── ...                     # Frontend source code
 │   ├── package.json
 │   ├── tsconfig.json
 │   └── ...
 └── README.md
-
-12. API Endpoints
-The backend exposes the following API endpoints:
-
-GET /
-Description: Root endpoint, returns a simple status message.
-Response: {"message": "Chat with Your Code API is running!"}
-
-POST /upload_code_file
-Description: Uploads a code file (C, C++, or header) for processing and indexing into ChromaDB.
-Request Body: multipart/form-data with a file field.
-Allowed File Types: .c, .cpp, .h, .hpp, .cxx
-Response: {"message": "File '{filename}' processed and indexed successfully."}
-Error: 400 Bad Request if file type is not allowed. 500 Internal Server Error on processing failure.
-
-POST /clear_codebase
-Description: Clears all indexed code chunks from the ChromaDB collection.
-Response: {"message": "ChromaDB codebase cleared successfully."}
-Error: 500 Internal Server Error on clearing failure.
-
-POST /ask/
-
-Description: Asks a natural language question about the indexed codebase.
-Request Body (JSON):
-
-JSON
-
-{
-  "query": "string",
-  "temperature": 0.2,            // Optional, controls LLM randomness (default 0.2)
-  "top_k": 5,                  // Optional, number of chunks to retrieve (default 5)
-  "similarity_threshold": 0.7, // Optional, minimum similarity for retrieved chunks (default 0.7)
-  "filter_type": "string"      // Optional, filter retrieved chunks by type (e.g., "function", "class", "struct", "comment", "test_case_function", "array_init")
-}
-Response (JSON):
-
-JSON
-
-{
-  "answer": "string",
-  "retrieved_context": [
-    {
-      "content": "string",
-      "source": "string",
-      "start_line": 0,
-      "type": "string",
-      "distance": 0.0,           // Optional
-      "function_name": "string", // Optional
-      "class_name": "string",    // Optional
-      "struct_name": "string"    // Optional
-    }
-  ],
-  "debug_info": {
-    "retrieved_chunk_count": 0,
-    "query_top_k": 0,
-    "query_similarity_threshold": 0.0,
-    "llm_temperature": 0.0,
-    "filter_type_applied": "string", // If filter was used
-    "retrieved_chunks_summary": [
-      {
-        "type": "string",
-        "name": "string",
-        "source": "string",
-        "line": 0,
-        "distance": "string"
-      }
-    ]
-  }
-}
-Error: 500 Internal Server Error on query processing failure.
-
-13. Contributing
-Contributions are welcome! If you have suggestions for improvements, bug fixes, or new features, please open an issue or submit a pull request.
-
-Please ensure your code adheres to the existing style and conventions.
-
-14. License
-This project is licensed under the MIT License - see the LICENSE file for details.
-(You'll need to create a LICENSE file in your repository if you haven't already. A simple way is to choose MIT when creating a new repo on GitHub, or copy an MIT license template.)
-
-15.Acknowledgments
-FastAPI
-
-ChromaDB
-
-Google Gemini API
-
-Sentence-Transformers
-
-Tree-sitter
-
-  
-- ### Frontend using react and tailwind 
-- Built with React 18 + TypeScript, Tailwind CSS, Vite, and Lucide React, featuring responsive design, reusable components, and theme support (dark/light).
-- Secure signup/login with bcrypt password hashing, Flask-Session for session management, and persistent user preferences.
-- Drag-and-drop C/C++ file uploads with validation, syntax-highlighted viewer, file statistics, Mermaid diagram visualizations, and localStorage persistence.
-- Animated landing page, gradient and glassmorphism effects, micro-interactions, and chat interface for seamless user engagement.
-- AI-driven natural language responses for code explanation, documentation generation, and RAG-based query handling.
+```
 
 ---
+
+## 12. API Endpoints
+- **`GET /`**
+  - Root status endpoint.
+  - Response:
+  ```json
+  {"message": "Chat with Your Code API is running!"}
+  ```
+
+- **`POST /upload_code_file`**
+  - Uploads and indexes a code file.
+  - Allowed file types: `.c`, `.cpp`, `.h`, `.hpp`, `.cxx`
+
+- **`POST /clear_codebase`**
+  - Clears all indexed chunks.
+
+- **`POST /ask/`**
+  - Asks a question about the codebase.
+  - Example request:
+  ```json
+  {
+    "query": "What does this function do?",
+    "temperature": 0.2,
+    "top_k": 5,
+    "similarity_threshold": 0.7
+  }
+  ```
+
+---
+
+## 13. Contributing
+Contributions are welcome via issues and pull requests. Please follow the existing style and conventions.
+
+---
+
+## 14. License
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+## 15. Acknowledgments
+- FastAPI
+- ChromaDB
+- Google Gemini API
+- Sentence-Transformers
+- Tree-sitter
+
+---
+
+✍️ **Authors**
+- Manasa K
+- Likhith Gowda A S
