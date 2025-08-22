@@ -34,7 +34,9 @@ uvicorn main:app --reload
 
 ## Run Frontend (React.js)
 cd frontend
+
 npm install
+
 npm run dev
 
 
@@ -45,12 +47,34 @@ This project was developed collaboratively:
 - ## Shreya C Bharadwaj – Local Model RAG pipeline, Qwen model integration, FAISS setup, FastAPI backend  
 - ## Manasa K and  Likhith – API approach 
 **Backend Development (RAG, LLM, FastAPI)** 
-- Implemented the **Retrieval-Augmented Generation (RAG)** pipeline for C/C++ codebases.  
-- Developed **chunking logic** for functions and comments using **tree-sitter**.  
-- Integrated **ChromaDB** vector search and **SentenceTransformers** embeddings.  
-- Connected **Gemini 1.5 Flash** for LLM-powered explanations.  
-- Built **FastAPI backend** with secure `/ask` endpoint.  
-- Generated **Mermaid flowcharts** for function logic visualization.  
+- ## 🔧 Backend Overview
+
+The backend powers the **Chat With Your Code** system, enabling semantic search and AI-powered explanations over large C/C++ codebases. It combines modern vector search, embeddings, and LLM integration for contextual responses.
+
+---
+
+### ⚙️ Tech Stack
+- **Python** – Core language for backend logic  
+- **FastAPI** – Lightweight and high-performance API framework  
+- **ChromaDB** – Vector database for storing code embeddings and metadata  
+- **SentenceTransformers** – Generates dense vector embeddings using `all-MiniLM-L6-v2`  
+- **Tree-sitter** – Accurate parsing of C/C++ functions, classes, and comments  
+
+---
+
+### 🔍 Semantic Search
+- **Advanced Vector Embeddings** – Converts both code snippets and natural language queries into embeddings  
+- **Context-Aware Retrieval** – Finds semantically related code instead of relying on keyword matches  
+- **Complete Code Units** – Ensures retrieved chunks are entire functions or logical blocks (via Tree-sitter)  
+
+---
+
+### 🤖 LLM-Powered Responses
+- **AI-Generated Explanations** – Uses structured code chunks for clear, contextual explanations  
+- **Technical Q&A** – Answers complex developer queries about the codebase  
+- **Code Documentation** – Generates accurate function/class-level documentation  
+- **Mermaid Flowcharts** – Visualizes function logic with auto-generated diagrams  
+  
 - ## Laasya and Siva Vaishali – Frontend using react and tailwind 
 - Built with React 18 + TypeScript, Tailwind CSS, Vite, and Lucide React, featuring responsive design, reusable components, and theme support (dark/light).
 - Secure signup/login with bcrypt password hashing, Flask-Session for session management, and persistent user preferences.
