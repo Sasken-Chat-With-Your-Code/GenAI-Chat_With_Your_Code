@@ -56,7 +56,6 @@ This project was developed collaboratively:
 - Secure signup/login with bcrypt password hashing, Flask-Session for session management, and persistent user preferences.
 - Drag-and-drop C/C++ file uploads with validation, syntax-highlighted viewer, file statistics, Mermaid diagram visualizations, and localStorage persistence.
 - Animated landing page, gradient and glassmorphism effects, micro-interactions, and chat interface for seamless user engagement.
-- Advanced vector embeddings enable intelligent, context-aware search across entire codebases for precise snippet retrieval.
 - AI-driven natural language responses for code explanation, documentation generation, and RAG-based query handling.
 
 
