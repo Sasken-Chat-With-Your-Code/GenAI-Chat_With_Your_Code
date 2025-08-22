@@ -52,21 +52,12 @@ This project was developed collaboratively:
 - Built **FastAPI backend** with secure `/ask` endpoint.  
 - Generated **Mermaid flowcharts** for function logic visualization.  
 - ## Laasya and Siva Vaishali – Frontend using react and tailwind (elaborate)
-- React 18 with TypeScript
-- Tailwind CSS for styling
-- Vite for fast development
-- Lucide React for icons
-- Backend Stack:
-- Flask (Python web framework)
-- SQLite database
-- bcrypt for password hashing
-- Flask-Session for user management
-- 1. Semantic Search
-- Advanced vector embeddings for intelligent code search
-- Context-aware query understanding
-- Finds relevant code snippets across entire codebase
-- 2. LLM-Powered Responses
-- AI-generated explanations using state-of-the-art language models
-- Natural language answers to technical questions
-- Code explanation and documentation generation
+- Built with React 18 + TypeScript, Tailwind CSS, Vite, and Lucide React, featuring responsive design, reusable components, and theme support (dark/light).
+- Secure signup/login with bcrypt password hashing, Flask-Session for session management, and persistent user preferences.
+- Drag-and-drop C/C++ file uploads with validation, syntax-highlighted viewer, file statistics, Mermaid diagram visualizations, and localStorage persistence.
+- Animated landing page, gradient and glassmorphism effects, micro-interactions, and chat interface for seamless user engagement.
+- Advanced vector embeddings enable intelligent, context-aware search across entire codebases for precise snippet retrieval.
+- AI-driven natural language responses for code explanation, documentation generation, and RAG-based query handling.
+
+
 
