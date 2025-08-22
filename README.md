@@ -42,13 +42,13 @@ npm run dev
 
 This project was developed collaboratively:
 
-- **Shreya C Bharadwaj** – Local Model RAG pipeline, Qwen model integration, FAISS setup, FastAPI backend  
-- **[Manasa Likhith]** – API approach 
-**Backend Development (RAG, LLM, FastAPI)** – *Manasa K*  
+- ## Shreya C Bharadwaj – Local Model RAG pipeline, Qwen model integration, FAISS setup, FastAPI backend  
+- ## Manasa K and  Likhith – API approach 
+**Backend Development (RAG, LLM, FastAPI)** 
 - Implemented the **Retrieval-Augmented Generation (RAG)** pipeline for C/C++ codebases.  
 - Developed **chunking logic** for functions and comments using **tree-sitter**.  
 - Integrated **ChromaDB** vector search and **SentenceTransformers** embeddings.  
 - Connected **Gemini 1.5 Flash** for LLM-powered explanations.  
 - Built **FastAPI backend** with secure `/ask` endpoint.  
 - Generated **Mermaid flowcharts** for function logic visualization.  
-- **[Laasya Siva Vaishali]** – Frontend using react and tailwind (elaborate)
+- ## Laasya and Siva Vaishali – Frontend using react and tailwind (elaborate)
