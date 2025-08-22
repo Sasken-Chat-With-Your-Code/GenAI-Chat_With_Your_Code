@@ -47,13 +47,13 @@ This project was developed collaboratively:
 - ## Shreya C Bharadwaj – Local Model RAG pipeline, Qwen model integration, FAISS setup, FastAPI backend  
 - ## Manasa K and  Likhith – API approach 
 **Backend Development (RAG, LLM, FastAPI)** 
-- ## 🔧 Backend Overview
+- ** 🔧 Backend Overview
 
 The backend powers the **Chat With Your Code** system, enabling semantic search and AI-powered explanations over large C/C++ codebases. It combines modern vector search, embeddings, and LLM integration for contextual responses.
 
 ---
 
-### ⚙️ Tech Stack
+** ⚙️ Tech Stack
 - **Python** – Core language for backend logic  
 - **FastAPI** – Lightweight and high-performance API framework  
 - **ChromaDB** – Vector database for storing code embeddings and metadata  
@@ -62,14 +62,14 @@ The backend powers the **Chat With Your Code** system, enabling semantic search 
 
 ---
 
-### 🔍 Semantic Search
+** 🔍 Semantic Search
 - **Advanced Vector Embeddings** – Converts both code snippets and natural language queries into embeddings  
 - **Context-Aware Retrieval** – Finds semantically related code instead of relying on keyword matches  
 - **Complete Code Units** – Ensures retrieved chunks are entire functions or logical blocks (via Tree-sitter)  
 
 ---
 
-### 🤖 LLM-Powered Responses
+** 🤖 LLM-Powered Responses
 - **AI-Generated Explanations** – Uses structured code chunks for clear, contextual explanations  
 - **Technical Q&A** – Answers complex developer queries about the codebase  
 - **Code Documentation** – Generates accurate function/class-level documentation  
